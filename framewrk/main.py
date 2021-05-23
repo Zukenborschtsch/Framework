@@ -1,3 +1,8 @@
+import quopri
+import json
+from framewrk.requests import get_req, post_req
+
+
 class PageNotFound404:
     def __call__(self, request):
         return '404 WHAT', '404 PAGE Not Found'
@@ -20,9 +25,35 @@ class Framework:
             view = PageNotFound404()
         request = {}
 
+        if environ['REQUEST_METHOD'] == 'GET':
+            data = get_req(environ)
+            print(f'Получен get запрос {data}')
+
+        if environ['REQUEST_METHOD'] == 'POST':
+            data = post_req(environ)
+            norm_data = decode_mime(data)
+            write_file(norm_data)
+            print(f'Получен post запрос {norm_data}')
+
         for front in self.fronts_lst:
             front(request)
 
         code, body = view(request)
         start_response(code, [('Content-Type', 'text/html')])
         return [body.encode('utf-8')]
+
+
+def write_file(data):
+    with open('feedback.json', 'a', encoding='UTF-8') as feed_file:
+        json.dump(data, feed_file, ensure_ascii=False, indent=4)
+
+
+def decode_mime(data):
+    ret_data = {}
+    for param, value in data.items():
+        normalize_value = bytes(
+            value.replace('%', '=').replace('+', ' '), "UTF-8"
+        )
+        decoded_value = quopri.decodestring(normalize_value).decode("UTF-8")
+        ret_data[param] = decoded_value
+    return ret_data
