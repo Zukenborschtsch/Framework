@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-Покупайте наших слонов!<br>
-<a href="/">На главную</a>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+	О нас
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+    Покупайте наших слонов!
+{% endblock %}
+{% block basement %}
+	{% include "inc-basement.html" %}
+{% endblock %}

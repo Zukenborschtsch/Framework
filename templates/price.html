@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Прайс-лист</title>
-</head>
-<body>
-Все цены актуальны на {{date}}<br>
-Слон большой - 300 рублей<br>
-Слон средний - 200 рублей<br>
-Слон малый - 100 рублей<br>
-Набор слонов - 500 рублей<br>
-<br>
-Для заказа воспользуйтесь <a href="feedback">формой обратной связи</a><br>
-<a href="/">На главную</a>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+	Прайс-лист
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+    Все цены актуальны на {{date}}<br>
+    Слон большой - 300 рублей<br>
+    Слон средний - 200 рублей<br>
+    Слон малый - 100 рублей<br>
+    Набор слонов - 500 рублей<br>
+    <br>
+    Для заказа воспользуйтесь <a href="feedback">формой обратной связи</a><br>
+{% endblock %}
+{% block basement %}
+	{% include "inc-basement.html" %}
+{% endblock %}

@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Интернет-магазин "Полосатый слон"</title>
-</head>
-<body>
-Добро пожаловать в наш интернет-магазин, {{username}}!<br>
-<a href="price">Прайс-лист</a><br>
-<a href="feedback">Связаться с нами</a><br>
-<a href="about">О нас</a><br>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+	Интернет-магазин "Полосатый слон"
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+    Добро пожаловать в наш интернет-магазин, {{username}}!
+{% endblock %}
+{% block basement %}
+	{% include "inc-basement.html" %}
+{% endblock %}
