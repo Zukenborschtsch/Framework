@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+Список групп
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+    <div>
+        <a href="/">назад на главную</a>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <a href="/course-new/?id={{id}}">Создать новую группу</a>
+        <br>
+        <h1>Список групп для категории "{{name}}"</h1>
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span><a href="/copy-course/?name={{item.name}}">скопировать</a></span>
+        </li>
+        {% endfor %}
+    </div>
+{% endblock %} 

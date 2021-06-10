@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-	Прайс-лист
+	Расписание занятий
 {% endblock %}
 {% block style %}
 	{% include "inc-style.html" %}
@@ -9,13 +9,38 @@
 	{% include "inc-menu.html" %}
 {% endblock %}
 {% block body %}
-    Все цены актуальны на {{date}}<br>
-    Слон большой - 300 рублей<br>
-    Слон средний - 200 рублей<br>
-    Слон малый - 100 рублей<br>
-    Набор слонов - 500 рублей<br>
-    <br>
-    Для заказа воспользуйтесь <a href="feedback">формой обратной связи</a><br>
+    <table>
+        <tr class="head">
+            <th>Дисциплина</th>
+            <th>Класс</th>
+            <th>Дата следующего занятия</th>
+            <th>Место проведения</th>
+        </tr>
+        <tr>
+            <td>Carbine</td>
+            <td>Open</td>
+            <td>21.06.21</td>
+            <td>Галерея №4</td>
+        </tr>
+        <tr>
+            <td>Shotgun</td>
+            <td>Open</td>
+            <td>21.06.21</td>
+            <td>Галерея №3</td>
+        </tr>
+        <tr>
+            <td>Shotgun</td>
+            <td>Manual</td>
+            <td>22.06.21</td>
+            <td>Галерея №3</td>
+        </tr>
+        <tr>
+            <td>Pistol</td>
+            <td>Production</td>
+            <td>22.06.21</td>
+            <td>Галерея №4</td>
+        </tr>
+    </table>
 {% endblock %}
 {% block basement %}
 	{% include "inc-basement.html" %}

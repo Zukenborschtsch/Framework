@@ -1,11 +1,15 @@
 import quopri
 import json
 from framewrk.requests import get_req, post_req
+from patterns.creational_patterns import Logger
+
+
+logger = Logger("main")
 
 
 class PageNotFound404:
     def __call__(self, request):
-        return '404 WHAT', '404 PAGE Not Found'
+        return "404 Not Found", "404 Not Found"
 
 
 class Framework:
@@ -19,21 +23,28 @@ class Framework:
         if not path.endswith('/'):
             path = f'{path}/'
 
+        logger.log(path)
+
+        request = {}
+        method = environ["REQUEST_METHOD"]
+        request["method"] = method
+
+        if environ['REQUEST_METHOD'] == 'GET':
+            data = get_req(environ)
+            request["request_params"] = data
+            print(f'Получен get запрос {data}')
+
+        if method == "POST":
+            data = post_req(environ)
+            request["data"] = data
+            norm_data = decode_mime(data)
+            write_file(norm_data)
+            print(f'Получен post запрос {norm_data}')
+
         if path in self.routes_lst:
             view = self.routes_lst[path]
         else:
             view = PageNotFound404()
-        request = {}
-
-        if environ['REQUEST_METHOD'] == 'GET':
-            data = get_req(environ)
-            print(f'Получен get запрос {data}')
-
-        if environ['REQUEST_METHOD'] == 'POST':
-            data = post_req(environ)
-            norm_data = decode_mime(data)
-            write_file(norm_data)
-            print(f'Получен post запрос {norm_data}')
 
         for front in self.fronts_lst:
             front(request)

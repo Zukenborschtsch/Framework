@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-	Интернет-магазин "Полосатый слон"
+	Стрелковый клуб "Выстрел"
 {% endblock %}
 {% block style %}
 	{% include "inc-style.html" %}
@@ -9,7 +9,21 @@
 	{% include "inc-menu.html" %}
 {% endblock %}
 {% block body %}
-    Добро пожаловать в наш интернет-магазин, {{username}}!
+    Добро пожаловать на наш сайт, {{username}}!<br>
+	<div>
+		<a href="/category-new/">Создать новую категорию</a>
+	</div>
+	<div>
+		<h1>Список существующих тренировок</h1>
+		<ol type="1">
+			{% for item in objects_list %}
+				<li>
+					{{item.name}} <span>Количество групп: {{item.course_count()}}</span>
+					<a href="/course-list/?id={{item.id}}">Показать группы</a>
+				</li>
+			{% endfor %}
+		</ol>
+	</div>
 {% endblock %}
 {% block basement %}
 	{% include "inc-basement.html" %}
