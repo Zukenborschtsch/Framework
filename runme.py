@@ -1,7 +1,8 @@
 from wsgiref.simple_server import make_server
 
-from framewrk.main import Framework
-from urls import routes, fronts
+from framewrk.main import Framework, FakeFramework, LogFramework
+from urls import fronts
+from views import routes
 
 app = Framework(routes, fronts)
 

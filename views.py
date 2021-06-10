@@ -1,47 +1,60 @@
 from framewrk.templator import render
 from patterns.creational_patterns import Engine, Logger
-
+from patterns.structural_patterns import RouteAdd, Debug
 
 site = Engine()
 logger = Logger('main')
+routes = {}
 
 
+@RouteAdd(routes=routes, url="/")
 class Index:
+    @Debug(name="Index")
     def __call__(self, request):
-        #return '200 OK', render('index.html', username=request.get('username', None))
         return "200 OK", render("index.html", objects_list=site.categories, username=request.get('username', None))
 
 
+@RouteAdd(routes=routes, url="/about/")
 class About:
+    @Debug(name="About")
     def __call__(self, request):
         return '200 OK', render('about.html')
 
 
+@RouteAdd(routes=routes, url="/price/")
 class Price:
+    @Debug(name="Price")
     def __call__(self, request):
         return '200 OK', render('price.html', date=request.get('date', None))
 
 
+@RouteAdd(routes=routes, url="/feedback/")
 class Feedback:
+    @Debug(name="Feedback")
     def __call__(self, request):
         return '200 OK', render('feedback.html')
 
 
+@RouteAdd(routes=routes, url="/course-list/")
 class CoursesList:
+    @Debug(name="CoursesList")
     def __call__(self, request):
         logger.log("Список курсов")
         category_id = int(request['request_params']['id'])
         logger.log(f"ID категоии {category_id}")
         try:
             category = site.find_category_by_id(category_id)
-            return '200 OK', render('course-list.html', objects_list=category.courses, name=category.name, id=category.id)
+            return '200 OK', render('course-list.html', objects_list=category.courses, name=category.name,
+                                    id=category.id)
         except KeyError:
             return '200 OK', 'No curses'
 
 
+@RouteAdd(routes=routes, url="/course-new/")
 class CreateCourse:
     category_id = -1
 
+    @Debug(name="CreateCourse")
     def __call__(self, request):
         print(request)
         if request['method'] == 'POST':
@@ -71,7 +84,9 @@ class CreateCourse:
                 return '200 OK', 'Empty category'
 
 
+@RouteAdd(routes=routes, url="/category-new/")
 class CreateCategory:
+    @Debug(name="CreateCategory")
     def __call__(self, request):
         if request['method'] == 'POST':
             # метод пост
@@ -97,13 +112,17 @@ class CreateCategory:
             return '200 OK', render('category-new.html', categories=categories)
 
 
+@Debug(name="CategoryList")
 class CategoryList:
+    @Debug(name="CategoryList")
     def __call__(self, request):
         logger.log('Список категорий')
         return '200 OK', render('category-list.html', objects_list=site.categories)
 
 
+@RouteAdd(routes=routes, url="/copy-course/")
 class CopyCourse:
+    @Debug(name="CopyCourse")
     def __call__(self, request):
         request_params = request['request_params']
 

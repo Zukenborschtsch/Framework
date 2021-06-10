@@ -68,3 +68,24 @@ def decode_mime(data):
         decoded_value = quopri.decodestring(normalize_value).decode("UTF-8")
         ret_data[param] = decoded_value
     return ret_data
+
+
+class FakeFramework(Framework):
+    def __init__(self, routes, fronts):
+        self.application = Framework(routes, fronts)
+        super().__init__(routes, fronts)
+
+    def __call__(self, environ, start_response):
+        start_response('200 OK', [('Content-Type', 'text/html')])
+        return [b"All OK! Fake framework running!"]
+
+
+class LogFramework(Framework):
+    def __init__(self, routes, fronts):
+        self.application = Framework(routes, fronts)
+        super().__init__(routes, fronts)
+
+    def __call__(self, env, start_response):
+        print('Log framework running')
+        print(env)
+        return self.application(env, start_response)

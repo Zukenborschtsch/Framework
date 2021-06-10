@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86d4973f-e387-4183-909c-a64eecff74ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/patterns/creational_patterns.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/category-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/category-new.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/course-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/create-course.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patterns/structural_patterns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framewrk/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/framewrk/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inc-basement.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc-basement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inc-menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc-menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/price.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/price.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runme.py" beforeDir="false" afterPath="$PROJECT_DIR$/runme.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
     </list>
@@ -26,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -45,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Урок 4. Пример практического задания" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Урок 5. Пример практического задания" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
