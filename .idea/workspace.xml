@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86d4973f-e387-4183-909c-a64eecff74ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/patterns/behavioral_patterns.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/add-student.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/create-student.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/student-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patterns/architectural_patterns_mappers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patterns/architectural_patterns_unit_of_work.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site_db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feedback.json" beforeDir="false" afterPath="$PROJECT_DIR$/feedback.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patterns/creational_patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/patterns/creational_patterns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>

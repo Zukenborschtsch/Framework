@@ -1,13 +1,16 @@
 from framewrk.templator import render
 from patterns.behavioral_patterns import EmailNotifier, SmsNotifier, ListView, CreateView, BaseSerializer
-from patterns.creational_patterns import Engine, Logger
+from patterns.creational_patterns import Engine, Logger, MapperRegistry
 from patterns.structural_patterns import RouteAdd, Debug
+from patterns.architectural_patterns_unit_of_work import UnitOfWork
 
 site = Engine()
 logger = Logger('main')
 routes = {}
 email_notifier = EmailNotifier()
 sms_notifier = SmsNotifier()
+UnitOfWork.new_current()
+UnitOfWork.get_current().set_mapper_registry(MapperRegistry)
 
 
 @RouteAdd(routes=routes, url="/")

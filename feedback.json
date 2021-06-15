@@ -58,4 +58,30 @@
 }{
     "course_name": "Manual",
     "student_name": "Вася"
+}{
+    "name": "rfg",
+    "email": "sdfg",
+    "header": "вап",
+    "message": "sdfgsd"
+}{
+    "name": "Carbine"
+}{
+    "name": "Вася"
+}{
+    "name": "Open"
+}{
+    "name": "Shotgun"
+}{
+    "name": "Manual"
+}{
+    "name": "Петя"
+}{
+    "course_name": "Open",
+    "student_name": "Вася"
+}{
+    "course_name": "Open",
+    "student_name": "Петя"
+}{
+    "course_name": "Manual",
+    "student_name": "Вася"
 }
